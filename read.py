@@ -4,6 +4,13 @@ import argparse
 import os
 
 def read(data, keys):
+    """Search through data with given keys
+
+    read(data, [a,b,c]) is equivilent to
+    data[a][b][c]
+    If the current level is a list then it
+        tries to convert key to int
+    """
     if len(keys) == 0:
         return data
     if (type(data) is list):
