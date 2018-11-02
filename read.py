@@ -17,6 +17,12 @@ def read(data, keys):
         keys[0] = int(keys[0])
     return read(data[keys[0]], keys[1:])
 
+def extractData(filename)
+    """Read a dictionary/list from file"""
+    s = open(filename, 'r').read()
+    data = eval(s)
+    return data
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('input', type=str,
@@ -26,9 +32,8 @@ def main():
 
     args = parser.parse_args()
 
-    s = open(args.input, 'r').read()
-    data = eval(s)
     try:
+        data = extractData(args.input)
         print(read(data, args.keys))
     except KeyboardInterrupt:
         raise
