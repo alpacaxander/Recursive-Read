@@ -17,7 +17,7 @@ def read(data, keys):
         keys[0] = int(keys[0])
     return read(data[keys[0]], keys[1:])
 
-def extractData(filename)
+def extractData(filename):
     """Read a dictionary/list from file"""
     s = open(filename, 'r').read()
     data = eval(s)
